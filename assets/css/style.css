@@ -1,0 +1,36 @@
+#title {
+    color: white;
+    background: red;
+}
+
+#rules {
+    background: lightgray;
+}
+
+#score {
+    background: green;
+}
+
+#tally {
+    background: lightgrey;
+}
+
+/* IMAGES */
+img {
+    /* keep image width within column size */
+    max-width: 100%;
+    /* width: auto; */
+    /* position: relative; */
+}
+#blueCrystal {
+    background: blue;
+    }
+#silverCrystal {
+    background: silver;
+}
+#orangeCrystal {
+    background: orange;
+}
+#pinkCrystal {
+    background: pink;
+}
