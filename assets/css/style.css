@@ -1,36 +1,45 @@
+/* ROW SIZES - column sizes in html bootstrap template */
+/* #row0 {height: 65px;} */
+/* #row1 {height: 375px;} */
+/* #row2 {height: 65px;} */
+/* #row3 {height: 135px;} */
+/* #row4 {height: 35px;} */
+/* #row5 {height: 65px;} */
+
 #title {
-    color: white;
-    background: red;
+    color: black;
+    /* background: red; */
 }
 
 #rules {
-    background: lightgray;
+    color: black;
+    /* background: lightgray; */
 }
 
-#score {
-    background: green;
+#randomNumTarget {
+    /* background: green; */
 }
 
 #tally {
-    background: lightgrey;
+    /* background: lightgrey; */
 }
 
-/* IMAGES */
-img {
-    /* keep image width within column size */
-    max-width: 100%;
-    /* width: auto; */
-    /* position: relative; */
+/* CRYSTAL BUTTONS */
+input {
+    /* keep image width within column size
+    also done by .img-fluid class in bootstap */
+    width: 100%;
 }
-#blueCrystal {
-    background: blue;
+#blueCrystalButton {
+    /* padding-top: 5%; */
+    /* background: blue; */
     }
-#silverCrystal {
-    background: silver;
+#silverCrystalButton {
+    /* background: silver; */
 }
-#orangeCrystal {
-    background: orange;
+#orangeCrystalButton {
+    /* background: orange; */
 }
-#pinkCrystal {
-    background: pink;
+#pinkCrystalButton {
+    /* background: pink; */
 }
