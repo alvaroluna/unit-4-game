@@ -39,7 +39,9 @@ input {
 }
 #orangeCrystalButton {
     /* background: orange; */
+    /* object-fit: none; */
 }
 #pinkCrystalButton {
     /* background: pink; */
+    object-fit: cover;
 }
