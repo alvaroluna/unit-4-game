@@ -4,36 +4,55 @@ function GetRandomInt(min, max) {
 
 function TestInput() { console.log("button pressed!") }
 
-function ResetScore() {
-    $("#randomNumTarget").text("00");
-}
-
 function Main() {
     function AddCrystalScore(event) {
         var randomNum = GetRandomInt()
 
         if (event.data.crystal === "blue") {
-            totalScore += blueCrysRanScore;
-            $("#currentScore").text(totalScore);
-            console.log(totalScore);
+            currentScore += blueCrysRanScore;
+            $("#currentScore").text(currentScore);
+            console.log(currentScore);
         }
         if (event.data.crystal === "silver") {
-            totalScore += silverCrysRanScore;
-            $("#currentScore").text(totalScore);
-            console.log(totalScore);
+            currentScore += silverCrysRanScore;
+            $("#currentScore").text(currentScore);
+            console.log(currentScore);
         }
         if (event.data.crystal === "orange") {
-            totalScore += orangeCrysRanScore;
-            $("#currentScore").text(totalScore);
-            console.log(totalScore);
+            currentScore += orangeCrysRanScore;
+            $("#currentScore").text(currentScore);
+            console.log(currentScore);
         }
         if (event.data.crystal === "pink") {
-            totalScore += pinkCrysRanScore;
-            $("#currentScore").text(totalScore);
-            console.log(totalScore);
+            currentScore += pinkCrysRanScore;
+            $("#currentScore").text(currentScore);
+            console.log(currentScore);
         }
 
-        return (totalScore);
+        if (currentScore === randomNumTarget) {
+            alert("You Win!");
+
+            wins++;
+            $("#wins").text("Wins " + wins);
+
+            currentScore = 0;
+            $("#currentScore").text("00")
+
+            randomNumTarget = GetRandomInt(19, 120);
+            $("#randomNumTarget").text(randomNumTarget);
+        }
+        if (currentScore > randomNumTarget) {
+            alert("You Lose!");
+
+            loses++;
+            $("#loses").text("Loses " + loses);
+
+            currentScore = 0;
+            $("#currentScore").text("00")
+
+            randomNumTarget = GetRandomInt(19, 120);
+            $("#randomNumTarget").text(randomNumTarget);
+        }
     }
 
     // establish initial random target score
@@ -41,7 +60,7 @@ function Main() {
     $("#randomNumTarget").text(randomNumTarget);
 
     // total current user score
-    var totalScore = 0;
+    var currentScore = 0;
 
     var blueCrysRanScore = GetRandomInt(1, 12);
     var silverCrysRanScore = GetRandomInt(1, 12);
@@ -59,28 +78,6 @@ function Main() {
         $("#orangeCrystalButton").click({ crystal: "orange" }, AddCrystalScore);
         $("#pinkCrystalButton").click({ crystal: "pink" }, AddCrystalScore);
     };
-
-    if (totalScore === randomNumTarget) {
-        alert("You Win!");
-
-        wins++;
-        $("#wins").text("Wins " + wins);
-
-        ResetScore()
-    }
-    if (totalScore > randomNumTarget) {
-        alert("You Lose!");
-
-        loses++;
-        $("#loses").text("Loses " + loses);
-
-        ResetScore()
-    }
-
-    console.log(totalScore);
-
-    // setTimeout(ResetScore, 1000)
-
 }
 
 Main()
